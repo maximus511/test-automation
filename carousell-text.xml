@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Carousell Test" thread-count="1">
+
+    <test name="Car Offer Test" preserve-order="true">
+        <parameter name="username" value="rahul511"/>
+        <parameter name="password" value="test2017"/>
+        <parameter name="itemNumber" value="0"/>
+        <parameter name="offerAmount" value="199.99"/>
+        <classes>
+            <class name="test.carousell.usecases.CarOfferUsecase">
+                <methods>
+                    <include name="verifyCarOfferTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
