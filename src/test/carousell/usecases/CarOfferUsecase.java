@@ -14,6 +14,8 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static org.testng.Assert.assertTrue;
 
@@ -52,6 +54,7 @@ public class CarOfferUsecase {
     @Test
     @Parameters({"username", "password", "itemNumber", "offerAmount"})
     public void verifyCarOfferTest(String username, String password, String itemNumber, String offerAmount) {
+        Logger.getAnonymousLogger().log(Level.INFO, "Start Car offer use case test");
         MainPage page = new MainPage(driver);
         OfferPage offerPage = page
                 .clickOnEmailLogin()
@@ -73,6 +76,7 @@ public class CarOfferUsecase {
         chatPage.cancelOfferAction();
         assertTrue(chatPage.getLatestMessage().getText().contains("CANCELLED OFFER"),
                 "The offer was not cancelled");
+        Logger.getAnonymousLogger().log(Level.INFO, "End Car offer use case test");
     }
 
 }

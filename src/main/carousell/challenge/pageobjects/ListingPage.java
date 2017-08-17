@@ -1,6 +1,5 @@
 package main.carousell.challenge.pageobjects;
 
-import main.carousell.challenge.utility.CommonUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -9,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
 
 /**
  * Page object class for Listing page
@@ -36,6 +37,7 @@ public class ListingPage {
      * @return
      */
     public ItemPage clickListing(Integer index) {
+        Logger.getAnonymousLogger().log(Level.INFO, "Click on product");
         clickElement(productElementList.get(index));
         return new ItemPage(driver);
     }
@@ -45,6 +47,7 @@ public class ListingPage {
      * @return
      */
     public ListingPage acceptFeatureButton() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Accept feature action for Listing page");
         clickElement(featureButton);
         return new ListingPage(driver);
     }

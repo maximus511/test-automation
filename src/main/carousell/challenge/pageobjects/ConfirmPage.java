@@ -7,8 +7,10 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
 
 /**
  * Page object class for Confirmation popup
@@ -33,6 +35,7 @@ public class ConfirmPage {
      * @return
      */
     public ChatPage confirm() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Confirm action");
         clickElement(confirmButtonElement);
         return new ChatPage(driver);
     }

@@ -7,8 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
 
 /**
  * Page object class for Main App page
@@ -31,6 +33,7 @@ public class MainPage {
      * @return
      */
     public LoginPage clickOnEmailLogin() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Click on email login");
         clickElement(emailButtonElement);
         return new LoginPage(driver);
     }

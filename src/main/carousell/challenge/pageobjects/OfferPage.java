@@ -7,8 +7,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
+import static main.carousell.challenge.utility.CommonUtils.setElementValue;
 
 /**
  * Page object class for Enter Offer page
@@ -38,6 +41,7 @@ public class OfferPage {
      * @return
      */
     public OfferPage editOfferPrice(String amount) {
+        Logger.getAnonymousLogger().log(Level.INFO, "Edit offer price");
         setElementValue(offerTextElement, amount);
         return this;
     }
@@ -47,6 +51,7 @@ public class OfferPage {
      * @return
      */
     public ChatPage submitOffer() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Submit offer price");
         clickElement(submitButtonElement);
         clickElement(confirmButtonElement);
         return new ChatPage(driver);

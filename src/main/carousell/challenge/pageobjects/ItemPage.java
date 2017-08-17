@@ -7,8 +7,10 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
 
 /**
  * Page object class for Item page
@@ -36,6 +38,7 @@ public class ItemPage {
      * @return
      */
     public OfferPage clickBuyButton() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Click on Buy button");
         clickElement(buyButton);
         return new OfferPage(driver);
     }
@@ -45,6 +48,7 @@ public class ItemPage {
      * @return
      */
     public ItemPage acceptFeatureButton() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Accept feature action for product page");
         clickElement(featureButton);
         return new ItemPage(driver);
     }

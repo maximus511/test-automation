@@ -7,8 +7,11 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
+import static main.carousell.challenge.utility.CommonUtils.setElementValue;
 
 /**
  * Page object class for Login page
@@ -41,6 +44,7 @@ public class LoginPage {
      * @return
      */
     public LoginPage clickOnLoginTab() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Click on login tab");
         clickElement(loginElement);
         return this;
     }
@@ -52,6 +56,7 @@ public class LoginPage {
      * @return
      */
     public DashboardPage loginAction(String username, String password) {
+        Logger.getAnonymousLogger().log(Level.INFO, "Log in to the app");
         setElementValue(userIdField, username);
         setElementValue(pwdField, password);
         clickElement(loginButton);

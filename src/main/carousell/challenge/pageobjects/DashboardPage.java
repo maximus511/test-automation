@@ -7,8 +7,10 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
 
 /**
  * Page object class for Dashboard page
@@ -30,6 +32,7 @@ public class DashboardPage {
      * @return
      */
     public ListingPage clickCarOption() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Scroll and select Car option");
         carListingType = (MobileElement)driver.scrollTo("Cars");
         clickElement(carListingType);
         return new ListingPage(driver);

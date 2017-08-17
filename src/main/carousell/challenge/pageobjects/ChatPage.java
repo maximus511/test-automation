@@ -8,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static main.carousell.challenge.utility.CommonUtils.*;
+import static main.carousell.challenge.utility.CommonUtils.clickElement;
 
 /**
  * Page object class for Chat page
@@ -40,6 +42,7 @@ public class ChatPage {
      * @return
      */
     public ChatPage cancelOfferAction() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Click on cancel offer");
         clickElement(cancelOfferButtonElement);
         return new ConfirmPage(driver).confirm();
     }
@@ -49,6 +52,7 @@ public class ChatPage {
      * @return
      */
     public MobileElement getLatestMessage() {
+        Logger.getAnonymousLogger().log(Level.INFO, "Verify if offer message was sent");
         return offerTextElementList.get(offerTextElementList.size() - 1);
     }
 
