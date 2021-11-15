@@ -2,8 +2,8 @@
 <suite name="Carousell Test" thread-count="1">
 
     <test name="Car Offer Test" preserve-order="true">
-        <parameter name="username" value="rahul511"/>
-        <parameter name="password" value="test2017"/>
+        <parameter name="username" value=<userid>/>
+        <parameter name="password" value=<password>/>
         <parameter name="itemNumber" value="0"/>
         <parameter name="offerAmount" value="199.99"/>
         <classes>
